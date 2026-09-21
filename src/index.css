@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/*
+  Colour palette, defined once.
+  ink   = the deep purple-black backgrounds
+  brand = the purple accent, used for highlights, buttons and glows
+*/
+@theme static {
+  --font-display: "Itim", "Segoe UI", system-ui, sans-serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-ink-950: #0d0719;
+  --color-ink-900: #140a29;
+  --color-ink-800: #1c0f3a;
+  --color-ink-700: #2a1557;
+
+  --color-brand-200: #e3d2ff;
+  --color-brand-300: #cbaaff;
+  --color-brand-400: #ad7bf5;
+  --color-brand-500: #8f52e8;
+  --color-brand-600: #7635cf;
+  --color-brand-700: #5f26ad;
+  --color-brand-800: #4a1e88;
+
+  --color-fg: #f5f0ff;
+  --color-muted: #cfc5e6;
+  --color-subtle: #a496c4;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; color-scheme: dark; }
+  body { @apply bg-ink-950 font-sans text-fg antialiased; }
+  ::selection { background: var(--color-brand-600); color: white; }
+  :where(a, button, summary, [tabindex]):focus-visible { outline: 2px solid var(--color-brand-300); outline-offset: 3px; border-radius: 6px; }
+}
+
+@layer components {
+  .glass {
+    background: linear-gradient(135deg, rgb(255 255 255 / 0.09), rgb(255 255 255 / 0.025));
+    border: 1px solid rgb(255 255 255 / 0.10);
+    backdrop-filter: blur(14px);
+  }
+  .card-glow {
+    background: linear-gradient(135deg, var(--color-ink-700), var(--color-ink-900) 70%);
+    border: 1px solid rgb(143 82 232 / 0.25);
+    border-top: 2px solid var(--color-brand-600);
+  }
+}
+
+/* Scroll-reveal: only hides content when JavaScript is running. */
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; transition-delay: var(--delay, 0ms); }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes orbit { to { transform: rotate(360deg); } }
+@keyframes float { 50% { transform: translateY(-8px); } }
+.caret { animation: blink 1s steps(1) infinite; }
+.orbit { animation: orbit var(--dur, 30s) linear infinite; }
+.float { animation: float 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .caret, .orbit, .float { animation: none; }
+}

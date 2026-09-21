@@ -1,0 +1,13 @@
+# Joins the shared "edge" network so the Cloudflare Tunnel can reach it as portfolio-web:80
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    networks:
+      edge:
+        aliases:
+          - portfolio-web
+
+networks:
+  edge:
+    external: true
