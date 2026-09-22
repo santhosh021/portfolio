@@ -184,6 +184,26 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/santhosh021/inventory-management-app",
     featured: true,
   },
+  {
+    title: "Nexus",
+    tagline: "Where public data lives",
+    description:
+      "Nine free public APIs, each with its own colour theme and the visual best suited to its data, all behind a small backend proxy that keeps every API key off the browser. Built with AI coding assistants.",
+    highlights: [
+      "Live weather using the browser's own location, GitHub repo stats with a real commit chart, npm download trends, crypto prices, Hacker News, DEV.to, Stack Overflow, currency rates, and recent CVEs.",
+      "A Node/Express proxy holds every API key server-side; the browser never sees them, and responses are cached briefly to stay inside each free API's rate limit.",
+      "Switching panels crossfades the whole colour theme instead of jumping, and each panel's header stays in view while its content scrolls.",
+      "A React error boundary keeps the sidebar and the rest of the app working even if one panel's data fails to load.",
+    ],
+    tags: ["React", "TypeScript", "Node.js", "Express", "Docker"],
+    image: "/nexus-landing.jpg",
+    imageAlt: "Nexus landing page showing nine public data panels, each with its own colour",
+    secondImage: "/nexus-github.jpg",
+    secondImageAlt: "Nexus GitHub panel showing real repository stats and a commit activity chart",
+    liveUrl: "https://nexus.imsanthosh.tech",
+    repoUrl: "https://github.com/santhosh021/nexus",
+    featured: true,
+  },
 ];
 
 export const socials = [
