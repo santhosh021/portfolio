@@ -16,6 +16,7 @@ export const profile = {
   roles: ["Software Engineer", "Frontend Engineer", "TypeScript Developer"],
   location: "Chennai, Tamil Nadu, India",
   email: "santhoshmail21@gmail.com",
+  picture: "/Santhosh_Headshot.png",
   linkedin: "https://www.linkedin.com/in/santhosh21",
   github: "https://github.com/santhosh021",
   resume: "/Santhosh_Resume.pdf",
@@ -35,7 +36,7 @@ export const about = {
     { label: "Experience", value: "3 years 9 months" },
     { label: "Focus", value: "Frontend engineering with TypeScript" },
     { label: "Education", value: "B.Tech, Information Technology" },
-    { label: "Looking for", value: "Frontend roles in Chennai: on-site, hybrid or remote" },
+    { label: "Looking for", value: "Developer roles in Chennai: on-site, hybrid or remote" },
   ],
 };
 

@@ -8,7 +8,7 @@ export function Contact() {
       <Glow className="bottom-0 left-[20%] h-[360px] w-[360px]" />
       <Reveal className="relative max-w-2xl">
         <p className="text-lg leading-8 text-muted">
-          I am looking for my next role as a frontend engineer in Chennai, on-site, hybrid or remote. If you have an opening or a project in mind, let's connect.
+          I am looking for my next role as a software engineer in Chennai, on-site, hybrid or remote. If you have an opening or a project in mind, let's connect.
         </p>
         <a href={`mailto:${profile.email}`} className="mt-6 inline-block font-display text-2xl text-brand-300 underline decoration-brand-600 underline-offset-4 hover:text-brand-200 md:text-3xl">
           {profile.email}
