@@ -21,8 +21,14 @@ export function Hero() {
             </svg>
             <div className="relative aspect-square w-full">
               <div aria-hidden="true" className="absolute -inset-10 rounded-full bg-brand-600/40 blur-3xl" />
-              <div className="float relative grid size-full place-items-center overflow-hidden rounded-full border border-brand-400/40 bg-gradient-to-br from-brand-600 to-ink-800 shadow-[0_0_70px_rgb(143_82_232/0.5)]">
-                <img src={profile.picture} width={260} height={260} alt={profile.name} className="size-full object-cover" />
+              <div className="float relative size-full overflow-hidden rounded-full border border-brand-400/40 shadow-[0_0_70px_rgb(143_82_232/0.5)]">
+                <img
+                  src="/headshot.jpg"
+                  alt={`${profile.name}, ${profile.roles[0]}`}
+                  width={480}
+                  height={480}
+                  className="size-full object-cover"
+                />
               </div>
             </div>
           </Reveal>
