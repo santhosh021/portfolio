@@ -3,7 +3,8 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { LuBot, LuBookOpen, LuCode, LuHeadset, LuMail, LuServer } from "react-icons/lu";
 import {
   SiAngular, SiClaude, SiCloudflare, SiCss, SiDocker, SiDotnet, SiExpress, SiGit, SiHtml5, SiJavascript,
-  SiJekyll, SiMysql, SiNodedotjs, SiPortainer, SiReact, SiSharp, SiTypescript, SiUbuntu, SiVuedotjs,
+  SiJekyll, SiJsonwebtokens, SiMongodb, SiMysql, SiNginx, SiNodedotjs, SiPortainer, SiReact, SiSharp, SiTypescript, SiUbuntu,
+  SiVite, SiVuedotjs,
 } from "react-icons/si";
 
 /* ------------------------------------------------------------------
@@ -110,20 +111,22 @@ export const skillGroups: Array<{ title: string; skills: Skill[] }> = [
     skills: [
       { name: "TypeScript", icon: SiTypescript }, { name: "JavaScript", icon: SiJavascript }, { name: "React", icon: SiReact },
       { name: "Angular", icon: SiAngular }, { name: "Vue", icon: SiVuedotjs }, { name: "HTML", icon: SiHtml5 },
-      { name: "CSS", icon: SiCss }, { name: "Web accessibility" },
+      { name: "CSS", icon: SiCss }, { name: "Vite", icon: SiVite }, { name: "Responsive design" }, { name: "Web accessibility" },
     ],
   },
   {
     title: "Backend and data",
     skills: [
       { name: "C#", icon: SiSharp }, { name: "ASP.NET Core", icon: SiDotnet }, { name: "ASP.NET MVC" }, { name: "Node.js", icon: SiNodedotjs },
-      { name: "Express", icon: SiExpress }, { name: "REST APIs" }, { name: "MySQL", icon: SiMysql }, { name: "SQL Server" },
+      { name: "Express", icon: SiExpress }, { name: "REST APIs" }, { name: "JWT authentication", icon: SiJsonwebtokens },
+      { name: "Role-based access control" }, { name: "bcrypt" }, { name: "express-validator" }, { name: "Multer" },
+      { name: "MongoDB", icon: SiMongodb }, { name: "MySQL", icon: SiMysql }, { name: "SQL Server" },
     ],
   },
   {
     title: "DevOps and tools",
     skills: [
-      { name: "Git", icon: SiGit }, { name: "Docker", icon: SiDocker }, { name: "Docker Compose" }, { name: "Portainer", icon: SiPortainer },
+      { name: "Git", icon: SiGit }, { name: "Docker", icon: SiDocker }, { name: "Docker Compose" }, { name: "Nginx", icon: SiNginx }, { name: "Portainer", icon: SiPortainer },
       { name: "Cloudflare Tunnel", icon: SiCloudflare }, { name: "Ubuntu server", icon: SiUbuntu }, { name: "Jekyll", icon: SiJekyll },
     ],
   },
@@ -165,6 +168,26 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: "PawHome",
+    tagline: "Pet adoption platform",
+    description:
+      "A full-stack MERN app where shelters list pets with photos and adopters apply to adopt them online, with separate roles for adopters, shelters and admins. Built with AI coding assistants, self-hosted with Docker.",
+    highlights: [
+      "JWT login with bcrypt-hashed passwords, and role-based access for adopters, shelters and admins, enforced on both the Express API and the React routes.",
+      "Ownership checks: a shelter can only edit its own pets and review applications for them, and an adopter can only see their own applications.",
+      "Pet photos are uploaded with Multer (multipart/form-data) and checked for type and size; every request is validated with express-validator.",
+      "Docker Compose stack (nginx-served React client, Express API, MongoDB with persistent volumes) on my own Ubuntu server through Portainer, served over HTTPS through a Cloudflare Tunnel.",
+    ],
+    tags: ["MERN", "React", "Node.js", "Express", "MongoDB", "JWT", "Docker"],
+    image: "/pawhome-home.jpg",
+    imageAlt: "PawHome homepage with the hero section, adoption stats and pet filters",
+    secondImage: "/pawhome-pets.jpg",
+    secondImageAlt: "PawHome pet listing with species filters, search and pet cards",
+    liveUrl: "https://pawhome.imsanthosh.tech",
+    repoUrl: "https://github.com/santhosh021/pawhome",
+    featured: true,
+  },
   {
     title: "Stockroom",
     tagline: "Inventory management app",
