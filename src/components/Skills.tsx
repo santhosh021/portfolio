@@ -46,7 +46,6 @@ export function Skills() {
           </Reveal>
         ))}
       </div>
-      <Orbit />
     </Section>
   );
 }
